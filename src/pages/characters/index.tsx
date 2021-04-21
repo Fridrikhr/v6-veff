@@ -8,15 +8,15 @@ import { fetchCharacters } from '../../lib/swapi';
 import { IPeopleResponse } from '../../types';
 
 export type PageProps = {
-  peopleResponses: IPeopleResponse;
+  peopleResponse: IPeopleResponse;
 };
 
 export default function PageComponent(
   data: InferGetServerSidePropsType<typeof getServerSideProps>,
 ): JSX.Element {
-  const { peopleResponses } = data;
+  const { peopleResponse } = data;
 
-  if (!peopleResponses) {
+  if (!peopleResponse) {
     return (<p>error</p>);
   }
 
@@ -26,7 +26,7 @@ export default function PageComponent(
         <title>Star Wars characters</title>
       </Head>
       <h1>Star Wars characters</h1>
-      <Characters people={peopleResponses} />
+      <Characters people={peopleResponse} />
     </Layout>
   );
 }

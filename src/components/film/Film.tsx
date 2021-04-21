@@ -4,15 +4,14 @@ import { ICharacter } from '../../types';
 import s from './Film.module.scss';
 
 type Props = {
-  title: string;
-  episodeID: string;
-  openingCrawl: string;
+  title?: string;
+  episodeID?: string;
+  openingCrawl?: string;
   characters: Array<ICharacter>;
-  name: string;
 };
 
 export function Film({
-  title, episodeID, openingCrawl, characters, name,
+  title, episodeID, openingCrawl, characters,
 }: Props): JSX.Element {
   return (
     <section className={s.film}>
