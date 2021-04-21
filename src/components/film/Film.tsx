@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function Film({
-  title, episodeID, openingCrawl, characters,
+  title, episodeID, openingCrawl, characters
 }: Props): JSX.Element {
   return (
     <section className={s.film}>
@@ -26,7 +26,7 @@ export function Film({
             </Link>
           </li>
         ))}
-        {name}
+        
       </h2>
     </section>
   );
