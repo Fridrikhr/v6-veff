@@ -1,5 +1,6 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
+import { ParsedUrlQuery } from 'querystring';
 import { Characters } from '../../components/characters/Characters';
 
 import { Layout } from '../../components/layout/Layout';
@@ -30,7 +31,7 @@ export default function PageComponent(
   );
 }
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<PageProps, ParsedUrlQuery> = async () => {
   const peopleResponse = await fetchCharacters();
 
   return {
